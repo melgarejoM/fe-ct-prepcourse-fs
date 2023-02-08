@@ -32,11 +32,11 @@ function conection(status) {
    // Retornar el estado de conexión del usuario.
    // Tu código:
    if(status === 1){
-      return 
+      return "Online";
    }else if(status === 2){
-      return "Away"
+      return "Away";
    }else{
-      return "Offline"
+      return "Offline";
    }
    /* swich(status){
       case 1 :
