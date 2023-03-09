@@ -5,7 +5,16 @@ function mayuscula(nombre) {
    // Debe devolver el mismo nombre, pero con la primera letra en mayúscula.
    // [Ejemplo]: "mario" ----> "Mario".
    // Tu código:
-}
+   var nombreMayus = '';
+   var letra = nombre[0].toUpperCase()
+   console.log(letra);
+   for (var i = 1; i < nombre.length; i++){
+      nombreMayus = nombreMayus + nombre[i];
+   }
+   nombre = letra + nombreMayus;
+   return nombre;
+}//return nombre[0].toYpperCase()+ nombre.slice(1)
+//forma simplificada
 
 function invocarCallback(cb) {
    // Invoca/ejecuta el callback `cb`.
@@ -28,26 +37,53 @@ function sumarArray(arrayOfNumbers, cb) {
    // Este resultado debes pasárselo como argumento al callback recibido.
    // [NOTA]: no debes reotrnar nada.
    // Tu código:
+   var suma = 0;
+   for(var i = 0; i < arrayOfNumbers.length ; i++){
+      suma = suma + arrayOfNumbers[i]
+   }
+   cb(suma)
 }
+//var resultado = arrayOfNumbers.reduce(reduce(suma,num)){
+   //return suma + num
+   //forma simplificada
+//},0)
 
 function forEach(array, cb) {
    // Recibes un arreglo y un callback.
    // Debes iterar sobre el arreglo, y por cada elemento ejecutar el callback.
    // Debes pasarle el elemento como argumento al callback.
    // Tu código:
+   for(var i = 0 ; i < array.length ; i++){
+      cb(array[i])
+   }
 }
+//simplificado- array.forEach(cb)
 
 function map(array, cb) {
    // Debes iterar sobre el arreglo, y cada elemento pasárselo como arguemento al callback.
    // Tiene que guardar el resultado devuelto por el callback en cada elemento dentro de un nuevo arreglo.
    // Retorna el nuevo arreglo.
    // Tu código:
+   var nuevoArray = []
+   for(var i = 0; i < array.length ; i++){
+      nuevoArray.push(cb(array[i]))
+   }
+   return nuevoArray;
+
 }
+//simplificado- array.map(ele => cb())
 
 function filter(arrayOfStrings) {
    // Debes identificar todos los elementos el arreglo que comiencen con la letra "a".
    // Luego retorna un nuevo arreglo con estos elementos.
    // Tu código:
+   var nuevoArray = [];
+   for(var i = 0; i < arrayOfStrings.length ; i++){
+      if(arrayOfStrings[i][0] === 'a'){
+         nuevoArray.push(arrayOfStrings[i])
+      }
+   }
+   return nuevoArray;
 }
 
 /*⚠️ NO MODIFIQUES NADA DEBAJO DE ESTO ⚠️*/
